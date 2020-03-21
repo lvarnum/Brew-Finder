@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
         integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Recipe Search</title>
 </head>
 
 <body>
@@ -22,21 +21,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="index.html">Home</a>
                 <a class="nav-item nav-link" href="saved.html">Saved Recipes</a>
             </div>
         </div>
     </nav>
-
-
-
+    <div class="container">
+        <div class="row header"></div>
     <form class="pure-form text-center">
         <fieldset>
-            <input type="search" placeholder="search">
+            <input type="search" placeholder="Search">
             <button type="submit" id="search-btn" class="pure-button pure-button-primary">Search</button>
         </fieldset>
-        <a class="pure-button" href="#">Random Recipe</a>
+        <button class="pure-button random">Random Recipe</button>
     </form>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -44,5 +43,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </html>

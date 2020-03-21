@@ -12,5 +12,5 @@ $("#meals").on("click", function (event) {
 
 $(".pure-button").on("click", function (event){
     event.preventDefault();
-    window.location.href = "search.html";
+    window.location.href = "results.html";
 })
