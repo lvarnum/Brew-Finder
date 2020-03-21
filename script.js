@@ -6,6 +6,11 @@ $("#cocktails").on("click", function (event) {
 
 $("#meals").on("click", function (event) {
     event.preventDefault();
-    window.location.href="search.html"
+    window.location.href="search.html";
     
+})
+
+$(".pure-button").on("click", function (event){
+    event.preventDefault();
+    window.location.href = "search.html";
 })
