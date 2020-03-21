@@ -9,14 +9,21 @@
     height: 250px;
     padding: 45px;
     font-size: 50px;
+    color: white;
 }
 
 .cocktails {
     border-bottom: 0px;
     background-image: url("https://image.freepik.com/free-photo/selection-various-cocktails-table_140725-2909.jpg");
-    color: white;
 }
 
 .meals {
-    background-image: url("https://peychoosingbalance.com/wp-content/uploads/2018/11/Healthy-Meal-Prep--768x1024.jpg");
+    background-image: url("https://db3h9mjhnho7v.cloudfront.net/slideshow_big/5e4302a2620fe/001324-glam-vegan-mexican-casserole-rgb.jpg");
+}
+
+.pure-button {
+    margin-top: 30px;
+    width: 300px;
+    color: white;
+    background-color: darkred;
 }
