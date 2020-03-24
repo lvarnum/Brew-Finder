@@ -1,7 +1,6 @@
 var queryURL;
 
-$("#cocktails").on("click", function (event) {
-    event.preventDefault();
+$("#cocktails").on("click", function () {
     window.location.href = "search.html";
 
     var term = $("#search");
@@ -21,10 +20,9 @@ $("#cocktails").on("click", function (event) {
             console.log(response);
         });
 
-})
+});
 
-$("#meals").on("click", function (event) {
-    event.preventDefault();
+$("#meals").on("click", function () {
     window.location.href = "search.html";
 
     var term = $("#search");
@@ -44,11 +42,10 @@ $("#meals").on("click", function (event) {
             console.log(response);
         });
 
-})
+});
 
-$(".pure-button").on("click", function (event) {
-    event.preventDefault();
+$(".random").on("click", function () {
     window.location.href = "results.html";
-})
+});
 
 
