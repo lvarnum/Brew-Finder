@@ -1,3 +1,20 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: wheat;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.navbar, .page-footer {
+    background-color: maroon;
+}
+
+.navbar a, .footer-copyright {
+    color: white;
+}
+
 .container {
    text-align: center;
    width: 1000px;
@@ -17,17 +34,23 @@
 .cocktails {
     border-bottom: 0px;
     background-image: url("https://image.freepik.com/free-photo/selection-various-cocktails-table_140725-2909.jpg");
+    border-radius: 10px 10px 0px 0px;
 }
 
 .meals {
     background-image: url("https://db3h9mjhnho7v.cloudfront.net/slideshow_big/5e4302a2620fe/001324-glam-vegan-mexican-casserole-rgb.jpg");
+    border-radius: 0px 0px 10px 10px;
 }
 
 .random {
     margin-top: 30px;
     width: 300px;
     color: white;
-    background-color: darkred;
+    background-color: darkorange;
+}
+
+#search, #search-btn {
+    margin-bottom: 20px;
 }
 
 .pure-form {
