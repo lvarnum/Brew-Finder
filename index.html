@@ -15,33 +15,79 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">Recipe Search</a>
+        <div class="navbar-brand">Recipe Search</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="saved.html">Saved Recipes</a>
+                <div class="nav-item nav-link active home">Home<span class="sr-only">(current)</span></div>
+                <div class="nav-item nav-link saved">Saved Recipes</div>
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container index-page">
         <div class="row">
             <div class="col">
-                <div class="cocktails" id="cocktails"><a href="search.html">Cocktails</a></div>
-                <div class="meals" id="meals"><a href="search.html">Meals</a></div>
+                <div class="cocktails" id="cocktails" name="Cocktail">Cocktails</div>
+                <div class="meals" id="meals" name="Meal">Meals</div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button class="pure-button random">Random Pair</button>
+                <button class="pure-button random-pair">Random Pair</button>
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small fixed-bottom">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright: Some Students
+    <div class="container search-page">
+        <div class="row">
+            <div class="col">
+                <h1 id="header"></h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <form class="pure-form text-center">
+                    <fieldset>
+                        <input type="search" placeholder="Search Term" id="search">
+                        <input type="submit" id="search-btn" class="pure-button pure-button-primary" value="Search">
+                    </fieldset>
+                </form>
+                <div> - OR -</div>
+                <button class="pure-button random-single">Random Recipe</button>
+            </div>
+        </div>
+    </div>
+    <div class="container results-page">
+        <div class="row">
+            <div class="col">
+                <h1>Recipe Results</h1>
+                <hr>
+                <div class="row">
+                    <div class="col meal">
+
+                    </div>
+                    <div class="col cocktail">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container saved-page">
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h1>Saved Recipes</h1>
+                    <hr>
+                </header>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small sticky-bottom">
+        <div class="footer-copyright text-center py-3">© 2020
         </div>
     </footer>
 </body>
@@ -51,6 +97,10 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="script.js"></script>
 
 </html>
