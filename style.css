@@ -1,6 +1,7 @@
 body {
     font-family: 'Libre Baskerville', serif;
     background-color: wheat;
+    height: auto;
 }
 
 .navbar-brand {
@@ -9,10 +10,11 @@ body {
 
 .navbar, .page-footer {
     background-color: maroon;
+    color: white;
 }
 
-.navbar a, .footer-copyright {
-    color: white;
+.page-footer {
+    margin-top: 30px;
 }
 
 .container {
@@ -25,10 +27,7 @@ body {
     height: 250px;
     padding: 45px;
     font-size: 50px;
-}
-
-.cocktails a, .meals a {
-    color: white;
+    color:white;
 }
 
 .cocktails {
@@ -42,7 +41,7 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
-.random {
+.random-pair, .random-single {
     margin-top: 30px;
     width: 300px;
     color: white;
@@ -55,4 +54,9 @@ body {
 
 .pure-form {
     margin-top: 50px;
+}
+
+.card {
+    width: 470px;
+    margin-bottom: 10px;
 }
