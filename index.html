@@ -14,24 +14,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="navbar-brand">Recipe Search</div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="navbar-brand btn btn-link">Recipe Search</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <div class="nav-item nav-link active home">Home<span class="sr-only">(current)</span></div>
-                <div class="nav-item nav-link saved">Saved Recipes</div>
+                <div class="nav-item nav-link active home btn btn-link">Home</div>
+                <div class="nav-item nav-link saved active btn btn-link">Saved Recipes</div>
             </div>
         </div>
     </nav>
     <div class="container index-page">
         <div class="row">
             <div class="col">
-                <div class="cocktails" id="cocktails" name="Cocktail">Cocktails</div>
-                <div class="meals" id="meals" name="Meal">Meals</div>
+                <div class="cocktails" id="cocktails" name="Cocktail"><button class="btn btn-link">Cocktails</button>
+                </div>
+                <div class="meals" id="meals" name="Meal"><button class="btn btn-link">Meals</button></div>
             </div>
         </div>
         <div class="row">
@@ -48,7 +49,8 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col">
+            <div class="col search-area">
+                <h3>Search</h3>
                 <form class="pure-form text-center">
                     <fieldset>
                         <input type="search" placeholder="Search Term" id="search">
@@ -64,15 +66,11 @@
         <div class="row">
             <div class="col">
                 <h1>Recipe Results</h1>
-                <hr>
-                <div class="row">
-                    <div class="col meal">
-
-                    </div>
-                    <div class="col cocktail">
-                        
-                    </div>
-                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="all-results">
+            <div class="row results">
             </div>
         </div>
     </div>
@@ -83,13 +81,19 @@
                     <h1>Saved Recipes</h1>
                     <hr>
                 </header>
+                <div class="all-saved">
+                    <div class="row">
+                        <div class="col saved-recipes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col delete-all-button">
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small sticky-bottom">
-        <div class="footer-copyright text-center py-3">© 2020
-        </div>
-    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

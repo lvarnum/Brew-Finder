@@ -1,7 +1,15 @@
 body {
     font-family: 'Libre Baskerville', serif;
     background-color: wheat;
-    height: auto;
+}
+
+.btn-link {
+    font-size: 50px;
+    color:white;
+}
+
+.btn-link:hover {
+    color: white;
 }
 
 .navbar-brand {
@@ -13,25 +21,25 @@ body {
     color: white;
 }
 
-.page-footer {
-    margin-top: 30px;
-}
-
 .container {
    text-align: center;
-   width: 1000px;
    margin-top: 30px;
 }
 
+.nav-item {
+    font-size: 17px;
+}
+
+.navbar-toggler {
+    background-color: darkorange;
+}
+
 .cocktails, .meals {
-    height: 250px;
+    height: 275px;
     padding: 45px;
-    font-size: 50px;
-    color:white;
 }
 
 .cocktails {
-    border-bottom: 0px;
     background-image: url("https://image.freepik.com/free-photo/selection-various-cocktails-table_140725-2909.jpg");
     border-radius: 10px 10px 0px 0px;
 }
@@ -48,15 +56,58 @@ body {
     background-color: darkorange;
 }
 
+.random-pair {
+    margin-bottom: 30px;
+}
+
 #search, #search-btn {
     margin-bottom: 20px;
 }
 
 .pure-form {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .card {
-    width: 470px;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    float: none;
 }
+
+.card-body {
+    text-align: left;
+}
+
+.instruction, .ingredient {
+    color: blue;
+    font-size: 16px;
+    padding-left: 0px;
+}
+
+.instruction:hover, .ingredient:hover {
+    color: lightblue;
+}
+
+.search-area {
+    border-top: dashed black 1px;
+    border-bottom: dashed black 1px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.delete-all {
+    background-color: darkred;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.single {
+    width: 60%;
+}
+
+.pair {
+    width: 100%;
+}
+
+
+
