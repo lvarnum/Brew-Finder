@@ -22,7 +22,7 @@ var saved = JSON.parse(localStorage.getItem("saved"));
 
 // Checking if local storage has any saved recipies
 if (saved.length === 0) {
-    $(".saved-recipes").text("No Saved Recipes");
+    noSaved();
 }
 else {
     createSaved(0);
@@ -30,6 +30,18 @@ else {
 
 // Set amount of saved recipes in storage
 var count = saved.length;
+
+// Function to show "No Saved Recipes"
+function noSaved() {
+    var row = $("<row>");
+    row.addClass("row no-saved");
+    var col = $("<col>");
+    col.addClass("col");
+    col.text("No Saved Recipes");
+    row.append(col);
+    $(".all-saved").append(row);
+}
+
 
 // Function to create cards for the saved recipes page based on local storage
 function createSaved(index) {
@@ -84,19 +96,15 @@ function createSaved(index) {
         ingredients.attr("visible", "false");
 
         // Create and append new rows and cols with the cards to the saved page
+        $(".no-saved").remove();
         var row = $("<div>");
         row.addClass("row saved-recipe");
         var col = $("<div>");
         col.addClass("col");
         col.append(card);
-        if (i > 0) {
-            row.append(col);
-            $(".all-saved").append(row);
-        }
-        else {
-            $(".saved-recipes").text('');
-            $(".saved-recipes").append(col);
-        }
+        row.append(col);
+        $(".all-saved").append(row);
+
     }
 
     // Create the delete all button on the first call to the function
@@ -117,12 +125,24 @@ function callMeal(queryURL, type) {
         method: "GET"
     }).then(function (response) {
 
-        // If no results come up, show "No Results"
+        // If no results come up, show "No Results" and create Search Again button
         if (response.meals === null) {
+            var noResults = $("<div>");
+            noResults.addClass("row no-results");
             var col = $("<div>");
             col.addClass("col");
             col.text("No Results");
-            $(".results").append(col);
+            noResults.append(col);
+            var searchAgain = $("<div>");
+            searchAgain.addClass("row new-search");
+            var colTwo = $("<div>");
+            colTwo.addClass("col");
+            var searchAgainButton = $("<button>");
+            searchAgainButton.addClass("pure-button pure-button-primary search-again");
+            searchAgainButton.text("Search Again");
+            colTwo.append(searchAgainButton);
+            searchAgain.append(colTwo);
+            resultsPage.append(noResults, searchAgain);
             return;
         }
 
@@ -203,12 +223,12 @@ function callMeal(queryURL, type) {
             var col = $("<div>");
             col.addClass("col");
             col.append(card);
-            if (i > 0) {
-                row.append(col);
-                $(".results-page").append(row);
+            if (type === "pair") {
+                $(".results").append(col);
             }
             else {
-                $(".results").append(col);
+                row.append(col);
+                resultsPage.append(row);
             }
         }
     });
@@ -223,12 +243,24 @@ function callCocktail(queryURL, type) {
         method: "GET"
     }).then(function (response) {
 
-        // If no results come up, show "No Results" on page
+        // If no results come up, show "No Results" and create Search Again button
         if (response.drinks === null) {
+            var noResults = $("<div>");
+            noResults.addClass("row no-results");
             var col = $("<div>");
             col.addClass("col");
             col.text("No Results");
-            $(".results").append(col);
+            noResults.append(col);
+            var searchAgain = $("<div>");
+            searchAgain.addClass("row new-search");
+            var colTwo = $("<div>");
+            colTwo.addClass("col");
+            var searchAgainButton = $("<button>");
+            searchAgainButton.addClass("pure-button pure-button-primary search-again");
+            searchAgainButton.text("Search Again");
+            colTwo.append(searchAgainButton);
+            searchAgain.append(colTwo);
+            resultsPage.append(noResults, searchAgain);
             return;
         }
 
@@ -309,12 +341,12 @@ function callCocktail(queryURL, type) {
             var col = $("<div>");
             col.addClass("col");
             col.append(card);
-            if (i > 0) {
-                row.append(col);
-                $(".results-page").append(row);
+            if (type === "pair") {
+                $(".results").append(col);
             }
             else {
-                $(".results").append(col);
+                row.append(col);
+                resultsPage.append(row);
             }
         }
     });
@@ -343,10 +375,15 @@ $("#meals").on("click", function () {
 // Event listener for when home page random pair button is clicked
 $(".random-pair").on("click", function () {
     // Clear any previous results and show results page
+    $(".no-results").remove();
+    $(".new-search").remove();
+    $(".results").remove();
     indexPage.hide();
-    $(".results").empty();
     $(".result").empty();
     resultsPage.show();
+    var row = $("<div>");
+    row.addClass("row results");
+    resultsPage.append(row);
     // Call functions that contain AJAX and send random api urls
     var mealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
     var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
@@ -356,8 +393,10 @@ $(".random-pair").on("click", function () {
 
 // Show results page and give random recipe based on cocktail or meal selection
 $(".random-single").on("click", function () {
+    $(".no-results").remove();
+    $(".new-search").remove();
+    $(".results").remove();
     searchPage.hide();
-    $(".results").empty();
     $(".result").empty();
     resultsPage.show();
     if ($("#header").text().includes("Cocktail")) {
@@ -373,8 +412,10 @@ $(".random-single").on("click", function () {
 // Upon search button clicked, prevent page load, show results page, and use appropriate API to run call function
 $("#search-btn").on("click", function (event) {
     event.preventDefault();
+    $(".no-results").remove();
+    $(".new-search").remove();
+    $(".results").remove();
     searchPage.hide();
-    $(".results").empty();
     $(".result").empty();
     resultsPage.show();
     var term = $("#search").val();
@@ -389,7 +430,7 @@ $("#search-btn").on("click", function (event) {
     }
 });
 
-// changing display of application sections based on where click happens
+// Changing display of application sections based on where click happens
 $(".navbar-brand").on("click", function () {
     searchPage.hide();
     resultsPage.hide();
@@ -472,7 +513,7 @@ $(document).on("click", ".delete-recipe", function () {
         }
     }
     if (saved.length === 0) {
-        $(".saved-recipes").text("No Saved Recipes");
+        noSaved();
         $(".delete-all").remove();
         count = 0;
     }
@@ -488,14 +529,16 @@ $(document).on("click", ".delete-all", function () {
     saved = [];
     localStorage.setItem("saved", JSON.stringify(saved));
     $(".delete-all").remove();
-    var row = $("<div>");
-    row.addClass("row");
-    var col = $("<col>");
-    col.addClass("col saved-recipes");
-    col.text("No Saved Recipes");
-    row.append(col);
-    $(".all-saved").append(row);
+    noSaved();
     count = 0;
+});
+
+// Do a new search if no results are found
+$(document).on("click", ".search-again", function () {
+    resultsPage.hide();
+    searchPage.show();
+    $("#search").val('');
+    $(this).remove();
 });
 
 
