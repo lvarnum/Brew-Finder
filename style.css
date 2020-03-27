@@ -109,5 +109,15 @@ body {
     width: 100%;
 }
 
+@media screen and (max-width: 575px) {
+    .single {
+        width: 100%;
+    }
+
+    #search {
+        display: inline-block;
+    }
+}
+
 
 
